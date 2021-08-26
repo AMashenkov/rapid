@@ -35,9 +35,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <!--        <maven.compiler.release>11</maven.compiler.release>-->
+<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
+                <maven.compiler.release>11</maven.compiler.release>
 
         <commons.cli.version>1.4</commons.cli.version>
         <grpc.protobuf.version>1.39.0</grpc.protobuf.version>
@@ -274,9 +274,9 @@
 
                 <configuration>
                     <!-- maven-compiler-plugin defaults to targeting Java 5, but our javac only supports >=6 -->
-                    <source>8</source>
-                    <target>8</target>
-                    <!--                    <release>11</release>-->
+<!--                    <source>8</source>-->
+<!--                    <target>8</target>-->
+                                        <release>11</release>
                     <showWarnings>true</showWarnings>
 
                     <!-- Protobuf/grpc generated sources triggers too many warnings -->
