@@ -45,6 +45,10 @@
     </reporting>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -126,37 +130,37 @@
             </plugin>
 
             <!-- Add @Generated annotation to generated protobuf code for error-prone to ignore -->
-            <plugin>
+            <!--  <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <executions>
-                    <execution>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <includes>
-                        <include>${basedir}/target/generated-sources/protobuf/java/**/*.java</include>
-                    </includes>
-                    <replacements>
-                        <replacement>
-                            <token>\npublic final class</token>
-                            <value>@javax.annotation.Generated("protoc") public final class</value>
-                        </replacement>
-                        <replacement>
-                            <token>\npublic final class</token>
-                            <value>@javax.annotation.Generated("protoc") public final class</value>
-                        </replacement>
-                        <replacement>
-                            <token>\npublic enum</token>
-                            <value>@javax.annotation.Generated("protoc") public enum</value>
-                        </replacement>
-                    </replacements>
-                </configuration>
-            </plugin>
+                 <artifactId>replacer</artifactId>
+                 <executions>
+                     <execution>
+                         <phase>process-sources</phase>
+                         <goals>
+                             <goal>replace</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+                 <configuration>
+                     <includes>
+                         <include>${basedir}/target/generated-sources/protobuf/java/**/*.java</include>
+                     </includes>
+                     <replacements>
+                         <replacement>
+                             <token>\npublic final class</token>
+                             <value>@javax.annotation.processing.Generated("protoc") public final class</value>
+                         </replacement>
+                         <replacement>
+                             <token>\npublic final class</token>
+                             <value>@javax.annotation.processing.Generated("protoc") public final class</value>
+                         </replacement>
+                         <replacement>
+                             <token>\npublic enum</token>
+                             <value>@javax.annotation.processing.Generated("protoc") public enum</value>
+                         </replacement>
+                     </replacements>
+                 </configuration>
+             </plugin>-->
 
             <!-- Test runner -->
             <plugin>
