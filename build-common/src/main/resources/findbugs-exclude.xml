@@ -26,7 +26,12 @@
         <Bug pattern="UC_USELESS_OBJECT" />
     </Match>
     <Match>
-        <Class name="com.vrg.rapid.messaging.impl.NettyClientServer" />
-        <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
+        <Bug pattern="EI_EXPOSE_REP" />
+    </Match>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2" />
+    </Match>
+    <Match>
+        <Bug pattern="NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION" />
     </Match>
 </FindBugsFilter>
