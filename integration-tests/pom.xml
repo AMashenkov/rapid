@@ -21,10 +21,11 @@
         <artifactId>rapid-project</artifactId>
         <groupId>com.github.lalithsuresh</groupId>
         <version>0.9.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.github.lalithsuresh</groupId>
     <artifactId>integration-tests</artifactId>
+    <version>0.9.0-SNAPSHOT</version>
 
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
@@ -34,14 +35,6 @@
         <dependency>
             <groupId>com.github.lalithsuresh</groupId>
             <artifactId>rapid</artifactId>
-            <version>0.9.0-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.lalithsuresh</groupId>
-            <artifactId>examples</artifactId>
-            <version>0.9.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 
@@ -58,7 +51,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <systemPropertyVariables>
                         <rapidExamplesAllInOneJar>
