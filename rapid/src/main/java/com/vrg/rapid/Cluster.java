@@ -32,7 +32,6 @@ import com.vrg.rapid.pb.NodeId;
 import com.vrg.rapid.pb.PreJoinMessage;
 import com.vrg.rapid.pb.RapidRequest;
 import com.vrg.rapid.pb.RapidResponse;
-import io.grpc.ExperimentalApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -199,7 +198,6 @@ public final class Cluster {
          *
          * @param metadata A map specifying a set of key-value tags.
          */
-        @ExperimentalApi
         public Builder setMetadata(final Map<String, ByteString> metadata) {
             Objects.requireNonNull(metadata);
             this.metadata = Metadata.newBuilder().putAllMetadata(metadata).build();
@@ -211,7 +209,6 @@ public final class Cluster {
          *
          * @param edgeFailureDetector A link failure detector used as input for Rapid's failure detection.
          */
-        @ExperimentalApi
         public Builder setEdgeFailureDetectorFactory(final IEdgeFailureDetectorFactory edgeFailureDetector) {
             Objects.requireNonNull(edgeFailureDetector);
             this.edgeFailureDetector = edgeFailureDetector;
@@ -221,7 +218,6 @@ public final class Cluster {
         /**
          * This is used to register subscriptions for different events
          */
-        @ExperimentalApi
         public Builder addSubscription(final ClusterEvents event,
                                        final Consumer<ClusterStatusChange> callback) {
             this.subscriptions.computeIfAbsent(event, k -> new ArrayList<>());

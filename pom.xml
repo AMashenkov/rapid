@@ -42,7 +42,7 @@
         <commons.cli.version>1.4</commons.cli.version>
         <error.prone.version>2.9.0</error.prone.version>
         <findbugs.version>3.0.5</findbugs.version>
-        <grpc.protobuf.version>1.7.0</grpc.protobuf.version>
+        <grpc.protobuf.version>1.39.0</grpc.protobuf.version>
         <guava.version>30.1.1-jre</guava.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <junit.params.version>1.1.1</junit.params.version>
@@ -58,7 +58,6 @@
         <maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
         <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
         <maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
-        <maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
         <maven.staging.plugin.version>1.6.8</maven.staging.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
@@ -238,12 +237,6 @@
                 </plugin>
 
                 <plugin>
-                    <groupId>com.google.code.maven-replacer-plugin</groupId>
-                    <artifactId>replacer</artifactId>
-                    <version>${maven.replacer.plugin.version}</version>
-                </plugin>
-
-                <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${jococo.maven.plugin.version}</version>
@@ -280,7 +273,7 @@
                     <!-- Protobuf/grpc generated sources triggers too many warnings -->
                     <compilerArgs>
                         <arg>-XDcompilePolicy=simple</arg>
-                        <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -Werror</arg>
+                        <arg>-Xplugin:ErrorProne -XepDisableWarningsInGeneratedCode -XepExcludedPaths:.*/target/generated-sources/.*</arg>
                         <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                         <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
                         <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>

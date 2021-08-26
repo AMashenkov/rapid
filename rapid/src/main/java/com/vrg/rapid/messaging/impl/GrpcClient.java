@@ -166,7 +166,7 @@ public class GrpcClient implements IMessagingClient {
             channel = InProcessChannelBuilder
                     .forName(remote.toString())
                     .executor(grpcExecutor)
-                    .usePlaintext(true)
+                    .usePlaintext()
                     .idleTimeout(10, TimeUnit.SECONDS)
                     .build();
         } else {
@@ -174,7 +174,7 @@ public class GrpcClient implements IMessagingClient {
                     .forAddress(remote.getHostname().toStringUtf8(), remote.getPort())
                     .executor(grpcExecutor)
                     .eventLoopGroup(eventLoopGroup)
-                    .usePlaintext(true)
+                    .usePlaintext()
                     .idleTimeout(10, TimeUnit.SECONDS)
                     .withOption(ChannelOption.SO_REUSEADDR, true)
                     .withOption(ChannelOption.SO_SNDBUF, DEFAULT_BUF_SIZE)

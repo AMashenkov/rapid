@@ -14,7 +14,6 @@
 package com.vrg.rapid.monitoring;
 
 import com.vrg.rapid.pb.Endpoint;
-import io.grpc.ExperimentalApi;
 
 /**
  * The EdgeFailureDetector interface. Implementations of this interface can be
@@ -28,7 +27,6 @@ import io.grpc.ExperimentalApi;
  *
  * To mark an edge faulty, simply execute notifier.run().
  */
-@ExperimentalApi
 public interface IEdgeFailureDetectorFactory {
     Runnable createInstance(final Endpoint subject, final Runnable notifier);
 }
